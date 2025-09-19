@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Điều Khiển - Quản Lý Bãi Xe</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bảng Điều Khiển Bãi Xe Thông Minh</h1>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Tổng số chỗ</h3>
+                <p class="value" id="total-spots">...</p>
+            </div>
+            <div class="stat-card">
+                <h3>Số xe trong bãi</h3>
+                <p class="value" id="occupied-spots">...</p>
+            </div>
+            <div class="stat-card">
+                <h3>Số chỗ trống</h3>
+                <p class="value" id="available-spots">...</p>
+            </div>
+            <div class="stat-card">
+                <h3>Doanh thu hôm nay</h3>
+                <p class="value value-revenue" id="today-revenue">...</p>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-container">
+                <h2>Tỷ Lệ Lấp Đầy Bãi Xe</h2>
+                <canvas id="occupancyChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>Lượt Xe Vào Theo Ngày (7 ngày qua)</h2>
+                <canvas id="dailyEntriesChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>Doanh Thu Theo Ngày (7 ngày qua)</h2>
+                <canvas id="dailyRevenueChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>Doanh Thu Theo Tháng (6 tháng qua)</h2>
+                <canvas id="monthlyRevenueChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>
+
