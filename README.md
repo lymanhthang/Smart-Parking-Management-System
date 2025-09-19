@@ -107,7 +107,10 @@ Hệ thống được xây dựng theo mô hình phân tán gồm 3 khối chín
 5.  **Chạy ứng dụng:**
 
     ```bash
-    flask run
+    cd backend_API/
+    python run.py
+    cd frontend
+    python run.py
     ```
 
     Mở trình duyệt và truy cập vào `http://127.0.0.1:5000`.
